@@ -7,7 +7,7 @@ Given a time interval, the task is run periodically, and the default interval ha
 ## export in your `deps.js`
 
 ```
-export {mcron,hcron,dcron} from 'https://deno.land/x/rmw_crontab@0.0.3/lib/index.js'
+export {mcron,hcron,dcron} from 'https://deno.land/x/rmw_crontab@0.0.4/lib/index.js'
 ```
 
 ## source code
@@ -23,7 +23,7 @@ export class Cron
     {interval} = @
     for i from @job
       i[0] -= interval
-      if i[0] <= 0
+      if i[0] < interval
         i[0]=i[1]
         _try i[2]
     return

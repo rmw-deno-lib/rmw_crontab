@@ -11,7 +11,8 @@ echo $next
 
 sed -i "s/@[0-9]\+.[0-9]\+.[0-9]\+\//@$next\//g" readme.make.md
 git add -u
-git commit -m "."
+git add ./lib/*
+git commit -m "v$next"
 git tag $next
 git push --tag
 

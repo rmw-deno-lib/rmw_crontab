@@ -2,19 +2,19 @@
 
 Given a time interval, the task is run periodically, and the default interval has 1 minute,1 hour or 1 day
 
-export in your `deps.js`
+## export in your `deps.js`
 
 ```
-export {mcron,hcron,dcron} from 'https://deno.land/x/rmw_crontab@0.0.1/lib/index.js'
+export {mcron,hcron,dcron} from 'https://deno.land/x/rmw_crontab@0.0.2/lib/index.js'
 ```
 
-source code
+## source code
 
 ```coffee
 #include ./src/index.coffee
 ```
 
-use example
+## use example
 
 coffeescript version
 

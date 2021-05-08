@@ -1,8 +1,4 @@
-_try = (func)=>
-  try
-    return await func()
-  catch err
-    console.error(err)
+import {_try} from './deps.js'
 
 export class Cron
   constructor:(@interval, @delay)->

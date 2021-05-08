@@ -20,7 +20,7 @@ export class Cron
       @interval*1000
     )
 
-    add = (interval, job, delay)->
+    add = (job, interval=1, delay=undefined)->
       if delay == undefined
         {delay} = @
       interval = interval * @interval

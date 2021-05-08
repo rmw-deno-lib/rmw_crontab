@@ -7,7 +7,7 @@ Given a time interval, the task is run periodically, and the default interval ha
 ## export in your `deps.js`
 
 ```
-export {mcron,hcron,dcron} from 'https://deno.land/x/rmw_crontab@0.0.4/lib/index.js'
+export {mcron,hcron,dcron} from 'https://deno.land/x/rmw_crontab@0.0.5/lib/index.js'
 ```
 
 ## source code
@@ -35,7 +35,7 @@ export class Cron
       @interval*1000
     )
 
-    add = (interval, job, delay)->
+    add = (job, interval=1, delay=undefined)->
       if delay == undefined
         {delay} = @
       interval = interval * @interval
@@ -70,8 +70,11 @@ import {mcron} from './index.js'
 
 
 do =>
-  mcron 1,=>
-    console.log new Date().toLocaleString()
+  mcron(
+    =>
+      console.log new Date().toLocaleString()
+    2
+  )
 
 
 ```
@@ -86,9 +89,9 @@ import {
 } from './index.js';
 
 (() => {
-  return mcron(1, () => {
+  return mcron(() => {
     return console.log(new Date().toLocaleString());
-  });
+  }, 2);
 })();
 
 //# sourceMappingURL=index_test.js.map
